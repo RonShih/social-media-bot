@@ -1,0 +1,111 @@
+brand:
+  slug: noirs-boxes
+  display_name: "Black Magic Noir's Boxes"
+  primary_language: en
+  secondary_languages: [zh-TW, ja]
+
+company:
+  description: |
+    Curated collectible boxes — themed mystery / variety SKU lineup with
+    global distribution via Amazon US, Taobao, and Rakuten JP. Audience
+    skews collectors, gift-buyers, and trend-followers.
+  website: https://www.amazon.com/dp/B0DZBZ9W55
+  email: ""
+
+voice:
+  tone: "playful-mysterious; collector-aware; light occult flavor without edginess"
+  audience:
+    - collectors
+    - gift-buyers
+    - trend-followers (US / JP / CN)
+  emphasis:
+    - surprise factor
+    - curation quality
+    - global shipping reach
+  forbidden_words:
+    - guaranteed
+    - cheapest
+    - scam
+    - fake
+  forbidden_behavior:
+    - competitor name-drops
+    - unverified rarity claims
+    - aggressive scarcity / urgency tactics
+
+socials:
+  facebook:
+    url: https://www.facebook.com/BlackMagicNoirsBoxes/
+    handle: BlackMagicNoirsBoxes
+    page_id: ""
+    asset_id: ""
+  instagram:
+    url: https://www.instagram.com/black_magic_noirsboxes/
+    handle: black_magic_noirsboxes
+  x:
+    url: https://x.com/NoirsBoxes
+    handle: NoirsBoxes
+  threads:
+    url: https://www.threads.net/@black_magic_noirsboxes
+    handle: black_magic_noirsboxes
+  youtube:
+    url: https://www.youtube.com/@boxesnoirs
+    handle: boxesnoirs
+  tiktok:
+    url: https://www.tiktok.com/@noirs.boxes
+    handle: noirs.boxes
+
+storefronts:
+  amazon: https://www.amazon.com/dp/B0DZBZ9W55?utm_medium=post&utm_campaign=md903&utm_term=adapter+tester&utm_content=black+magic
+  taobao: https://shop401155113.world.taobao.com/
+  rakuten: https://item.rakuten.co.jp/twdirect/c/0000002065/
+
+products:
+  - id: noir-mystery-box
+    name: "Noir's Mystery Box"
+    category: collectible
+    selling_points:
+      - curated rarities
+      - global shipping
+      - themed drops
+    target_audience:
+      - collectors
+      - gift-buyers
+
+content_themes:
+  - unboxing reveal
+  - behind-the-curation
+  - collector spotlight
+  - regional drop announcement
+  - trend / lore commentary
+
+content_style:
+  facebook:  { caption_length: medium, hashtag_count: 3, link_policy: og_card,  notes: "" }
+  instagram: { caption_length: medium, hashtag_count: 8, link_policy: bio_only, notes: "blank line then hashtag block" }
+  x:         { caption_length: short,  hashtag_count: 2, link_policy: inline,   notes: "<=280 chars total incl. tags" }
+  threads:   { caption_length: medium, hashtag_count: 1, link_policy: inline,   notes: "" }
+  youtube:   { caption_length: long,   hashtag_count: 8, link_policy: inline,   notes: "SEO-leaning description" }
+  tiktok:    { caption_length: short,  hashtag_count: 5, link_policy: bio_only, notes: "trend-aware tags" }
+
+competitors: []
+
+reference_urls:
+  own:
+    - https://www.facebook.com/BlackMagicNoirsBoxes/
+    - https://www.instagram.com/black_magic_noirsboxes/
+    - https://x.com/NoirsBoxes
+    - https://www.tiktok.com/@noirs.boxes
+    - https://www.youtube.com/@boxesnoirs
+  competitors: []
+
+media_library:
+  assets_dir: media/assets/noirs-boxes
+  inbox_dir: media/assets/noirs-boxes/inbox
+  hints:
+    - "dark / moody backgrounds; gold and burgundy accents"
+    - "show the box closed before reveal"
+    - "occult-adjacent props OK; avoid horror or violent imagery"
+
+storage:
+  drafts_dir: reports/drafts/noirs-boxes
+  posts_dir: reports/posts/noirs-boxes
+  plans_dir: reports/plans/noirs-boxes

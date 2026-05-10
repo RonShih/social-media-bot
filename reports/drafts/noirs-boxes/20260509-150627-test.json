@@ -1,0 +1,33 @@
+{
+  "draft_id": "20260509-150627-test",
+  "brand": "noirs-boxes",
+  "created_at": "2026-05-09T15:08:30Z",
+  "test_mode": "cross-brand dry-run on bellie's accounts",
+  "references": [
+    {
+      "url": "https://www.noirsboxes.com/Pages/Product.aspx",
+      "title": "NoirsBoxes — MD-903 / MD-905 Smart Charger & Power Adapter Detector"
+    }
+  ],
+  "drafts": [
+    {
+      "platform": "facebook",
+      "mode": "video",
+      "caption": "Is that fast charger really fast — or quietly counterfeit?\n\nThe MD-903 / MD-905 plugs in and tells you in 5 seconds: original, Taiwan-made, third-party, or counterfeit, with a clear rating score on its 3-inch color screen.\n\nReal-time readout of max power, PD/QC protocol, open-circuit voltage, output power, ripple noise, and rise/fall time — the numbers your QC checklist actually needs. OTA firmware keeps the protocol database current, so new chargers don't outrun your tester.\n\nBuilt for 3C retailers, repair shops, Amazon/Shopee sellers, and OEM/ODM QC lines.",
+      "hashtags": ["#BlackMagicNoirsBoxes", "#ChargerTester", "#USBPD"],
+      "local_image_path": null,
+      "local_video_path": "/mnt/c/Users/Ron/Desktop/social-media-bot/media/assets/bellie/bellie-rainy-day.mp4",
+      "rationale": "Mode forced from 'post' (image) to 'video' for dry-run mechanics — media/assets/noirs-boxes/ is empty, no native asset. Substituting bellie-rainy-day.mp4 to exercise the FB Reel three-stage flow with noirs-voiced caption. Visually mismatched (golden retriever video + charger-detector copy) but valid for composer mechanics."
+    },
+    {
+      "platform": "instagram",
+      "mode": "video",
+      "caption": "Is that charger original — or a clone pretending to be one?\n\nThe MD-903 / MD-905 plugs in and tells you in 5 seconds. Original, Taiwan-made, third-party, or counterfeit — with a rating score on a 3-inch TFT readout.\n\nReal-time data: max power, PD/QC protocol, open-circuit voltage, output power, ripple noise, rise/fall time. OTA firmware keeps the protocol database current as new chargers ship.\n\nBuilt for 3C retailers, repair shops, Amazon/eBay/Shopee sellers, and OEM/ODM QC lines. Stop guessing which cable or charger is the faulty one — diagnose it in seconds.\n\nLink in bio.",
+      "hashtags": ["#NoirsBoxes", "#ChargerTester", "#USBPD", "#QualcommQC", "#ElectronicsRepair", "#PhoneRepair", "#QualityControl", "#GadgetTools"],
+      "local_image_path": null,
+      "local_video_path": "/mnt/c/Users/Ron/Desktop/social-media-bot/media/assets/bellie/bellie-rainy-day.mp4",
+      "rationale": "Same mode override as FB. IG video flow → Crop → Edit → New reel composer."
+    }
+  ],
+  "errors": []
+}

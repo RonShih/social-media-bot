@@ -1,0 +1,33 @@
+{
+  "platform": "facebook",
+  "researched_at": "2026-05-09T14:26:30Z",
+  "rows": [
+    {
+      "source": "own",
+      "account": "Cutie Bellie",
+      "post_url": "https://www.facebook.com/photo/?fbid=122099118063305127&set=a.122099041185305127",
+      "post_type": "image",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "warm-affectionate, first-person Bellie",
+      "layout": "1-line caption + 3 emojis (📞🐾💛) + photo",
+      "hook": "跟爸爸視訊 📞🐾💛",
+      "why_it_resonated": "emotional cue (calling dad) + the photo shows late-night phone screen — anchors the parasocial 'family pet' frame; works on Bellie's relationship-with-human angle"
+    },
+    {
+      "source": "own",
+      "account": "Cutie Bellie",
+      "post_url": "https://www.facebook.com/reel/?cross-posted-from-instagram",
+      "post_type": "reel",
+      "likes": 2,
+      "comments": null,
+      "shares": null,
+      "tone": "wry-self-deprecating",
+      "layout": "ironic 1-liner + emoji + Reel video (cross-posted from IG)",
+      "hook": "日常到不行的日常 🦭",
+      "why_it_resonated": "format novelty + irony (calling something 'utterly ordinary' makes it a hook); 🦭 emoji tags Bellie's 'splat' pose; Reel surface boosts reach over photo"
+    }
+  ],
+  "notes": "Brand is brand-new — only 2 FB posts visible on the page; 6 followers; engagement counts not exposed for native photo post. No competitor research (competitors[] empty in brand YAML)."
+}

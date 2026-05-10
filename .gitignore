@@ -1,0 +1,13 @@
+.claude/settings.json
+config/active-brand
+config/secrets.yaml
+browser_profiles/
+.playwright-mcp/
+data/action-logs/
+data/runs/
+data/pending-confirmations.json
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+/tmp/

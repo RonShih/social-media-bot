@@ -1,0 +1,119 @@
+{
+  "schedule": [
+    {
+      "slot_id": "test-loop-fb-sun-0034",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "00:34",
+      "platform": "facebook",
+      "mode": "image",
+      "theme": "test slot 1",
+      "product_id": null,
+      "caption": "TEST 1 — would fire ~00:34",
+      "hashtags": [
+        "#test"
+      ],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "test-loop-fb-sun-0034",
+      "rationale": "loop-test slot 1",
+      "status": "fake-posted",
+      "posted_at": "2026-05-09T16:34:57.298Z",
+      "posted_url": "dryrun://simulated/test-loop-fb-sun-0034"
+    },
+    {
+      "slot_id": "test-loop-ig-sun-0039",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "00:39",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "test slot 2",
+      "product_id": null,
+      "caption": "TEST 2 — would fire ~00:39",
+      "hashtags": [
+        "#test"
+      ],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "test-loop-ig-sun-0039",
+      "rationale": "loop-test slot 2",
+      "status": "fake-posted",
+      "posted_at": "2026-05-09T16:40:06.822Z",
+      "posted_url": "dryrun://simulated/test-loop-ig-sun-0039"
+    },
+    {
+      "slot_id": "test-loop-fb-sun-0044",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "00:44",
+      "platform": "facebook",
+      "mode": "image",
+      "theme": "test slot 3",
+      "product_id": null,
+      "caption": "TEST 3 — would fire ~00:44",
+      "hashtags": [
+        "#test"
+      ],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "test-loop-fb-sun-0044",
+      "rationale": "loop-test slot 3",
+      "status": "fake-posted",
+      "posted_at": "2026-05-09T16:45:06.027Z",
+      "posted_url": "dryrun://simulated/test-loop-fb-sun-0044"
+    },
+    {
+      "slot_id": "test-loop-ig-sun-0049",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "00:49",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "test slot 4",
+      "product_id": null,
+      "caption": "TEST 4 — would fire ~00:49",
+      "hashtags": [
+        "#test"
+      ],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "test-loop-ig-sun-0049",
+      "rationale": "loop-test slot 4",
+      "status": "fake-posted",
+      "posted_at": "2026-05-09T16:50:04.865Z",
+      "posted_url": "dryrun://simulated/test-loop-ig-sun-0049"
+    },
+    {
+      "slot_id": "test-loop-fb-sun-0054",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "00:54",
+      "platform": "facebook",
+      "mode": "image",
+      "theme": "test slot 5",
+      "product_id": null,
+      "caption": "TEST 5 — would fire ~00:54",
+      "hashtags": [
+        "#test"
+      ],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "test-loop-fb-sun-0054",
+      "rationale": "loop-test slot 5",
+      "status": "fake-posted",
+      "posted_at": "2026-05-09T16:55:05.120Z",
+      "posted_url": "dryrun://simulated/test-loop-fb-sun-0054"
+    }
+  ],
+  "frequency": [],
+  "research": [],
+  "metrics": [],
+  "meta": {
+    "brand": "bellie",
+    "iso_week": "2026-W19-LOOP-TEST",
+    "test_mode": true,
+    "generated_at": "2026-05-10T00:32:00+08:00",
+    "notes": "Compressed-time test plan to validate /loop 5m + dry-tick.mjs dispatch logic. 5 Sun slots @ 00:34/39/44/49/54. status flips pending→fake-posted on each tick. NOT a real plan — do not /publish-from-plan from this."
+  }
+}

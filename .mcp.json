@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--user-data-dir",
+        "/mnt/c/Users/Ron/Desktop/social-media-bot/browser_profiles/bellie",
+        "--allow-unrestricted-file-access"
+      ]
+    }
+  }
+}

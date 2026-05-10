@@ -1,0 +1,72 @@
+{
+  "platform": "instagram",
+  "researched_at": "2026-05-09T14:27:30Z",
+  "rows": [
+    {
+      "source": "own",
+      "account": "@bellie_golden",
+      "post_url": "https://www.instagram.com/bellie_golden/reel/DNa56mOPtZD/",
+      "post_type": "reel",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "instructional-warm, training-log",
+      "layout": "1-line caption + 4 hashtags (training-niche-heavy)",
+      "hook": "Daily routine 🥰🥰🥰",
+      "why_it_resonated": "utility — pet-owner audience saves training-routine reels for reference; pinned by owner as top selector → high algorithmic surface; #dogtraining hashtag stack pulls in target audience"
+    },
+    {
+      "source": "own",
+      "account": "@bellie_golden",
+      "post_url": "https://www.instagram.com/bellie_golden/reel/DJdi4zNPkt2/",
+      "post_type": "reel",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "high-energy cute, aspiration",
+      "layout": "X is Y simile chain + onomatopoeia + 14-tag mixed-language stack (incl. Korean 골든리트리버)",
+      "hook": "Puppy Bear Bunny Yoda Seal awww~~~",
+      "why_it_resonated": "format novelty — 5-noun simile chain reads like a meme caption; reach-maximizing multilingual tags (zh + en + ko) target Asian golden-retriever community; pinned"
+    },
+    {
+      "source": "own",
+      "account": "@bellie_golden",
+      "post_url": "https://www.instagram.com/bellie_golden/reel/DX9YracSdPU/",
+      "post_type": "reel",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "warm-cozy, mood-setting",
+      "layout": "1-line emotional hook + 3 minimal tags",
+      "hook": "雨天特別好睡 🌧️",
+      "why_it_resonated": "weather-anchored emotion — readers project their own rainy-day mood onto Bellie; hashtag minimalism makes the caption itself the focus; recent post"
+    },
+    {
+      "source": "own",
+      "account": "@bellie_golden",
+      "post_url": "https://www.instagram.com/bellie_golden/reel/DWWklgmErYi/",
+      "post_type": "reel",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "playful-paradox, bilingual",
+      "layout": "Chinese paradox line + English mirror line + 😴 emoji + 3 tags",
+      "hook": "已進入深層睡眠，歡迎打擾",
+      "why_it_resonated": "paradox hook (deep sleep but welcomes interruption) is shareable; zh+en mirroring widens the reachable audience; sleeping-dog content is universally low-friction to like"
+    },
+    {
+      "source": "own",
+      "account": "@bellie_golden",
+      "post_url": "https://www.instagram.com/bellie_golden/reel/DXyz59PyKUj/",
+      "post_type": "reel",
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "tone": "self-mocking first-person Bellie",
+      "layout": "first-person POV one-liner + 🤓 + 5 tags (mix of niche + lifestyle)",
+      "hook": "我媽在家上班的最大阻礙是我🤓",
+      "why_it_resonated": "relatability for WFH dog owners; Bellie speaks in first person → builds parasocial bond; #在家工作日常 (WFH daily) tag pulls a non-pet audience that converts well"
+    }
+  ],
+  "notes": "Engagement counts not visible from public profile grid; clicking into each post would have cost ~12 extra navigations. Selected 5 by signal quality: 2 pinned (owner-validated tops) + 3 recent. Pattern: short emotional / paradox / first-person hook + minimal-to-medium tag stack + Reel format (10/12 visible posts are Reels). No competitor research (none configured)."
+}

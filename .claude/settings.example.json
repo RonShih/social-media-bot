@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--user-data-dir",
+        "/mnt/c/Users/Ron/Desktop/social-media-bot/browser_profiles/noirs-boxes",
+        "--allow-unrestricted-file-access"
+      ]
+    }
+  },
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash",
+      "WebFetch",
+      "WebSearch",
+      "mcp__playwright__*",
+      "mcp__plugin_telegram_telegram__*",
+      "mcp__*"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "schedule": [
+    {
+      "slot_id": "2026-W19-fb-tue-1100",
+      "weekday": "Tue",
+      "date": "2026-05-05",
+      "time_local": "11:00",
+      "platform": "facebook",
+      "mode": "image",
+      "theme": "daily comfort",
+      "product_id": null,
+      "caption": "下雨天，最適合賴在沙發上。\n媽媽說今天不出門，我超贊成的 🐾\n你今天也想躲在家裡嗎？",
+      "hashtags": ["#Bellie", "#黃金獵犬日常", "#療癒陪伴"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-fb-tue-1100",
+      "rationale": "Abstracted research_row[0]'s warm-affectionate first-person Bellie voice + short 1-liner with paw emoji ending; kept caption short per content_style.facebook and added a soft engagement question. needs media (orchestrator: route to image-generator)."
+    },
+    {
+      "slot_id": "2026-W19-fb-thu-1900",
+      "weekday": "Thu",
+      "date": "2026-05-07",
+      "time_local": "19:00",
+      "platform": "facebook",
+      "mode": "video",
+      "theme": "training log",
+      "product_id": null,
+      "caption": "我還在學「坐下」這件事 🐾\n\n爸爸說只要屁屁碰到地板就有零食，可是我有時候太興奮就忘記了，整個人會先轉一圈再坐下（這樣應該也算吧？）。\n\n慢慢來，我們一起練。",
+      "hashtags": ["#Bellie", "#黃金獵犬日常", "#訓練日記"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-fb-thu-1900",
+      "rationale": "Hook borrows wry-self-deprecating pattern from research row 2 (日常到不行的日常 🦭) reframed as Bellie's first-person 'still learning' angle, fits voice.emphasis (positive-reinforcement training). Body anchors on treat-based reward, no corporal-punishment language. needs media (orchestrator: route to image-generator)."
+    },
+    {
+      "slot_id": "2026-W19-fb-sat-1100",
+      "weekday": "Sat",
+      "date": "2026-05-09",
+      "time_local": "11:00",
+      "platform": "facebook",
+      "mode": "image",
+      "theme": "Golden Retriever trivia",
+      "product_id": null,
+      "caption": "你知道嗎？黃金獵犬的「金毛」其實是天然防水的 ☔\n\n小知識時間（Bellie 親自監督 🐾）：\n・原產地是蘇格蘭高地，被培育來銜回獵物\n・雙層被毛——外層防水、內層保暖\n・通常 6 個月才慢慢長出招牌大笑臉\n・成犬還是會用幼犬的方式撒嬌，一輩子都長不大（這點我可以作證）\n\n下次看到金金在水坑裡打滾，別急著阻止，那是寫在基因裡的浪漫。\n\n你家的金金有什麼讓你笑出來的小怪癖？留言告訴我，Bellie 想交朋友 💛",
+      "hashtags": ["#Bellie", "#黃金獵犬", "#狗狗冷知識"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-fb-sat-1100",
+      "rationale": "Trivia framed as warm mini-list rather than encyclopedia. Curiosity hook (waterproof coat) like research's emotional 1-liner pattern, comment-bait CTA suited to a 6-follower brand-new page. needs media (orchestrator: route to image-generator)."
+    },
+    {
+      "slot_id": "2026-W19-ig-mon-1230",
+      "weekday": "Mon",
+      "date": "2026-05-04",
+      "time_local": "12:30",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "new-owner guide",
+      "product_id": null,
+      "caption": "新手爸媽第一週，先學會「等」。\n\nBellie 兩歲，我還記得剛接她回家那週，一聽到嗚咽就衝過去 — 結果她學會：哭=有人來。\n後來改成等她安靜兩秒再靠近，整個家瞬間安靜下來。\n\n安全感不是秒回，是穩定的節奏。",
+      "hashtags": ["#新手養狗", "#黃金獵犬日常", "#goldenretriever", "#dogtraining", "#bellie_golden"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-ig-mon-1230",
+      "rationale": "Paradox-flavored imperative hook ('learn to wait') stops the scroll. One practical new-owner tip framed via Bellie. 5 mixed-language tags follow row 2's zh+en stack pattern. needs media (orchestrator: route to image-generator)."
+    },
+    {
+      "slot_id": "2026-W19-ig-wed-2000",
+      "weekday": "Wed",
+      "date": "2026-05-06",
+      "time_local": "20:00",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "Bellie's POV diary",
+      "product_id": null,
+      "caption": "下雨天，我媽說的「等一下出門」變成了「明天再說」🌧️\n\n窩在沙發角落，聽雨聲，這是今天最棒的工作。",
+      "hashtags": ["#bellie_golden", "#黃金獵犬日常", "#雨天宅在家", "#golden_retriever_life", "#골든리트리버"],
+      "media_path": "/mnt/c/Users/Ron/Desktop/social-media-bot/media/assets/bellie/bellie-rainy-day.mp4",
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-ig-wed-2000",
+      "rationale": "First-person Bellie POV per theme. First-line scroll-stop is the parent-quote paradox hook, mirroring row 4's bilingual paradox style and row 3's weather-anchored mood. Media bellie-rainy-day.mp4 matches the cozy/diary vibe exactly."
+    },
+    {
+      "slot_id": "2026-W19-ig-fri-1230",
+      "weekday": "Fri",
+      "date": "2026-05-08",
+      "time_local": "12:30",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "owner real talk",
+      "product_id": null,
+      "caption": "我以為養黃金獵犬會讓我變健康，結果現在是她在訓練我。\n\n每天 6:30 自動起床（不是我設的鬧鐘，是她）。\n散步路線她決定。沙發座位她優先。\n我只負責出門賺狗糧錢。\n\nThought I'd train a Golden. Turns out she's training me.",
+      "hashtags": ["#bellie_golden", "#黃金獵犬日常", "#골든리트리버", "#dogownerlife", "#鏟屎官的一天"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-ig-fri-1230",
+      "rationale": "Owner-POV switch per theme. Confession/paradox hook echoing row 4 ('thought I'd train her, she's training me'). Bilingual zh+en mirror tail. needs media (orchestrator: route to image-generator)."
+    },
+    {
+      "slot_id": "2026-W19-ig-sun-2000",
+      "weekday": "Sun",
+      "date": "2026-05-10",
+      "time_local": "20:00",
+      "platform": "instagram",
+      "mode": "video",
+      "theme": "daily comfort",
+      "product_id": null,
+      "caption": "明明還沒到星期一，怎麼已經開始想念週末了。\n\nBellie 倒是很瀟灑，沙發一塌就是她的句點。\nMaybe she's the smart one.",
+      "hashtags": ["#bellie_golden", "#週日症候群", "#黃金獵犬日常", "#sundayscaries", "#골든리트리버"],
+      "media_path": null,
+      "reference_urls": [],
+      "draft_id": "weekly-2026-W19-ig-sun-2000",
+      "rationale": "Sunday-night paradox hook leveraging research rows 4/3 emotional/bilingual patterns. Short en mirror line for reach. needs media (owner to choose cozy Bellie-on-couch reel clip)."
+    }
+  ],
+  "frequency": [
+    { "platform": "facebook",  "posts_per_week": 3, "preferred_weekdays": ["Tue", "Thu", "Sat"], "preferred_times": ["11:00", "19:00"], "rationale": "Default cadence (no prev_metrics). FB skews older; lunch + after-dinner peaks. Sat 11:00 captures weekend brunch scroll." },
+    { "platform": "instagram", "posts_per_week": 4, "preferred_weekdays": ["Mon", "Wed", "Fri", "Sun"], "preferred_times": ["12:30", "20:00"], "rationale": "Default cadence. Reel-dominant feed (10/12 visible posts are Reels) → keep cadence at 4 to maintain algorithmic surface; lunch + evening peaks for working-adult dog-owner audience." },
+    { "platform": "x",         "posts_per_week": 0, "preferred_weekdays": [], "preferred_times": [], "rationale": "SKIPPED — socials.x.url empty in brand YAML." },
+    { "platform": "threads",   "posts_per_week": 0, "preferred_weekdays": [], "preferred_times": [], "rationale": "SKIPPED — socials.threads.url empty in brand YAML." },
+    { "platform": "youtube",   "posts_per_week": 0, "preferred_weekdays": [], "preferred_times": [], "rationale": "SKIPPED — socials.youtube.url empty in brand YAML." },
+    { "platform": "tiktok",    "posts_per_week": 0, "preferred_weekdays": [], "preferred_times": [], "rationale": "SKIPPED — socials.tiktok.url empty in brand YAML." }
+  ],
+  "research": [
+    {
+      "platform": "facebook",
+      "researched_at": "2026-05-09T14:26:30Z",
+      "rows": [
+        { "source": "own", "account": "Cutie Bellie", "post_url": "https://www.facebook.com/photo/?fbid=122099118063305127&set=a.122099041185305127", "post_type": "image", "likes": null, "comments": null, "shares": null, "tone": "warm-affectionate, first-person Bellie", "layout": "1-line caption + 3 emojis (📞🐾💛) + photo", "hook": "跟爸爸視訊 📞🐾💛", "why_it_resonated": "emotional cue (calling dad) + photo of late-night phone screen — anchors parasocial 'family pet' frame" },
+        { "source": "own", "account": "Cutie Bellie", "post_url": "https://www.facebook.com/reel/?cross-posted-from-instagram", "post_type": "reel", "likes": 2, "comments": null, "shares": null, "tone": "wry-self-deprecating", "layout": "ironic 1-liner + emoji + Reel video (cross-posted from IG)", "hook": "日常到不行的日常 🦭", "why_it_resonated": "format novelty + irony hook; 🦭 emoji tags Bellie's 'splat' pose" }
+      ]
+    },
+    {
+      "platform": "instagram",
+      "researched_at": "2026-05-09T14:27:30Z",
+      "rows": [
+        { "source": "own", "account": "@bellie_golden", "post_url": "https://www.instagram.com/bellie_golden/reel/DNa56mOPtZD/", "post_type": "reel", "likes": null, "comments": null, "shares": null, "tone": "instructional-warm, training-log", "layout": "1-line caption + 4 hashtags (training-niche-heavy)", "hook": "Daily routine 🥰🥰🥰", "why_it_resonated": "utility — saved for reference; pinned by owner; #dogtraining stack pulls target audience" },
+        { "source": "own", "account": "@bellie_golden", "post_url": "https://www.instagram.com/bellie_golden/reel/DJdi4zNPkt2/", "post_type": "reel", "likes": null, "comments": null, "shares": null, "tone": "high-energy cute, aspiration", "layout": "X is Y simile chain + onomatopoeia + 14-tag mixed-language stack (incl. Korean 골든리트리버)", "hook": "Puppy Bear Bunny Yoda Seal awww~~~", "why_it_resonated": "format novelty — 5-noun simile chain reads like a meme caption; multilingual reach" },
+        { "source": "own", "account": "@bellie_golden", "post_url": "https://www.instagram.com/bellie_golden/reel/DX9YracSdPU/", "post_type": "reel", "likes": null, "comments": null, "shares": null, "tone": "warm-cozy, mood-setting", "layout": "1-line emotional hook + 3 minimal tags", "hook": "雨天特別好睡 🌧️", "why_it_resonated": "weather-anchored emotion — readers project rainy-day mood onto Bellie" },
+        { "source": "own", "account": "@bellie_golden", "post_url": "https://www.instagram.com/bellie_golden/reel/DWWklgmErYi/", "post_type": "reel", "likes": null, "comments": null, "shares": null, "tone": "playful-paradox, bilingual", "layout": "Chinese paradox line + English mirror line + 😴 emoji + 3 tags", "hook": "已進入深層睡眠，歡迎打擾", "why_it_resonated": "paradox hook is shareable; zh+en mirroring widens reach" },
+        { "source": "own", "account": "@bellie_golden", "post_url": "https://www.instagram.com/bellie_golden/reel/DXyz59PyKUj/", "post_type": "reel", "likes": null, "comments": null, "shares": null, "tone": "self-mocking first-person Bellie", "layout": "first-person POV one-liner + 🤓 + 5 tags (mix of niche + lifestyle)", "hook": "我媽在家上班的最大阻礙是我🤓", "why_it_resonated": "WFH dog-owner relatability; #在家工作日常 tag pulls non-pet audience" }
+      ]
+    }
+  ],
+  "metrics": [],
+  "meta": {
+    "brand": "bellie",
+    "iso_week": "2026-W19",
+    "generated_at": "2026-05-09T14:30:00Z",
+    "prev_week_plan_path": null,
+    "model": "claude-opus-4-7",
+    "run_id": "20260509-142401-eddb",
+    "notes": "Brand-new — 6 FB followers, 12 IG posts. Only FB + IG configured in socials. 6 of 7 slots need image-generator (only 1 asset bellie-rainy-day.mp4 exists; assigned to ig-wed-2000). No competitor research (competitors[] empty). No prev_metrics."
+  }
+}

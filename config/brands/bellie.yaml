@@ -1,0 +1,87 @@
+brand:
+  slug: bellie
+  display_name: "Bellie"
+  primary_language: zh-TW
+  secondary_languages: [en]
+
+company:
+  description: |
+    Bellie — 2-year-old female Golden Retriever. Smart, gentle, and playful.
+    Daily therapeutic + training-log content for dog lovers, new owners, and
+    anyone who needs a stress reset.
+  website: ""
+  email: ""
+
+voice:
+  tone: "warm, conversational, lightly playful (Bellie sometimes speaks in first person)"
+  audience:
+    - dog lovers
+    - new dog owners
+    - office workers needing comfort
+    - prospective Golden Retriever owners
+  emphasis:
+    - therapeutic companionship
+    - positive-reinforcement training
+    - real daily moments (not staged)
+  forbidden_words:
+    - 全網最強
+    - 保證
+    - 絕對
+  forbidden_behavior:
+    - criticizing other breeds or owners
+    - unverified medical / veterinary claims
+    - corporal-punishment training methods
+
+socials:
+  facebook:
+    url: https://www.facebook.com/profile.php?id=61589153818626
+    handle: "Cuite Bellie"
+    page_id: "61589153818626"
+    asset_id: "1152364687952171"
+  instagram:
+    url: https://www.instagram.com/bellie_golden/
+    handle: bellie_golden
+  x:       { url: "", handle: "" }
+  threads: { url: "", handle: "" }
+  youtube: { url: "", handle: "" }
+  tiktok:  { url: "", handle: "" }
+
+storefronts: {}
+
+products: []
+
+content_themes:
+  - daily comfort
+  - training log
+  - Golden Retriever trivia
+  - new-owner guide
+  - Bellie's POV diary
+  - owner real talk
+
+content_style:
+  facebook:  { caption_length: short, hashtag_count: 3, link_policy: og_card,  notes: "" }
+  instagram: { caption_length: short, hashtag_count: 5, link_policy: bio_only, notes: "first line is everything; no long-form first-person essay" }
+  x:         { caption_length: short, hashtag_count: 2, link_policy: inline,   notes: "" }
+  threads:   { caption_length: medium, hashtag_count: 1, link_policy: inline,  notes: "" }
+  youtube:   { caption_length: long,  hashtag_count: 8, link_policy: inline,   notes: "" }
+  tiktok:    { caption_length: short, hashtag_count: 5, link_policy: bio_only, notes: "" }
+
+competitors: []
+
+reference_urls:
+  own:
+    - https://www.facebook.com/profile.php?id=61589153818626
+    - https://www.instagram.com/bellie_golden/
+  competitors: []
+
+media_library:
+  assets_dir: media/assets/bellie
+  inbox_dir: media/assets/bellie/inbox
+  hints:
+    - "natural daylight, real moments — avoid staged studio shots"
+    - "Bellie is the subject; keep frames close enough to read her expression"
+
+storage:
+  drafts_dir: reports/drafts/bellie
+  posts_dir: reports/posts/bellie
+  plans_dir: reports/plans/bellie

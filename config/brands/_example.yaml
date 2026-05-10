@@ -1,0 +1,66 @@
+# brand profile schema — copy to <slug>.yaml and fill in.
+# Active brand is selected by config/active-brand (one-line slug).
+
+brand:
+  slug: example-brand                  # used as folder name; no spaces
+  display_name: "Example Brand"
+  primary_language: en                 # zh-TW | en | ja | de | ...
+  secondary_languages: []
+
+company:
+  description: |
+    One-paragraph company / IP description. Used by draft-* skills as
+    the source of truth for "what we are about".
+  website: ""
+  email: ""
+
+voice:
+  tone: ""                             # one short phrase
+  audience: []                         # who reads this
+  emphasis: []                         # what to lean on
+  forbidden_words: []                  # never use these
+  forbidden_behavior: []               # never do these
+
+socials:
+  facebook:  { url: "", handle: "", page_id: "", asset_id: "" }
+  instagram: { url: "", handle: "" }
+  x:         { url: "", handle: "" }
+  threads:   { url: "", handle: "" }
+  youtube:   { url: "", handle: "" }
+  tiktok:    { url: "", handle: "" }
+
+storefronts: {}                        # key → URL, e.g. amazon, taobao, rakuten
+
+products: []
+  # - id: ""
+  #   name: ""
+  #   category: ""
+  #   selling_points: []
+  #   target_audience: []
+
+content_themes: []
+
+content_style:
+  facebook:  { caption_length: medium, hashtag_count: 3, link_policy: og_card,  notes: "" }
+  instagram: { caption_length: medium, hashtag_count: 8, link_policy: bio_only, notes: "" }
+  x:         { caption_length: short,  hashtag_count: 2, link_policy: inline,   notes: "" }
+  threads:   { caption_length: medium, hashtag_count: 1, link_policy: inline,   notes: "" }
+  youtube:   { caption_length: long,   hashtag_count: 8, link_policy: inline,   notes: "" }
+  tiktok:    { caption_length: short,  hashtag_count: 5, link_policy: bio_only, notes: "" }
+
+competitors: []
+  # - { name: "", facebook: "", instagram: "", note: "" }
+
+reference_urls:
+  own: []
+  competitors: []
+
+media_library:
+  assets_dir: media/assets/example-brand
+  inbox_dir: media/assets/example-brand/inbox
+  hints: []                            # short visual / brand hints for image-generator
+
+storage:
+  drafts_dir: reports/drafts/example-brand
+  posts_dir: reports/posts/example-brand
+  plans_dir: reports/plans/example-brand

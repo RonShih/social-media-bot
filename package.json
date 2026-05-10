@@ -1,0 +1,18 @@
+{
+  "name": "social-media-bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-brand social-media operator powered by Claude Code + Playwright MCP.",
+  "scripts": {
+    "plan-export": "node scripts/plan-export.mjs",
+    "plan-import": "node scripts/plan-import.mjs",
+    "action-log": "node scripts/action-log-summarize.mjs"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
