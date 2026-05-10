@@ -7,10 +7,13 @@
   "scripts": {
     "plan-export": "node scripts/plan-export.mjs",
     "plan-import": "node scripts/plan-import.mjs",
-    "action-log": "node scripts/action-log-summarize.mjs"
+    "action-log": "node scripts/action-log-summarize.mjs",
+    "scrape:top": "node scripts/scrape-top-posts.mjs",
+    "test": "node --test 'tests/**/*.test.mjs'"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
+    "playwright": "^1.59.1",
     "yaml": "^2.8.4"
   },
   "engines": {
