@@ -70,7 +70,7 @@ Examples: `2026-W19-ig-mon-1230`, `2026-W19-yt-sat-1600`.
 ## Theme + product assignment
 
 - Pull `theme` from `content_themes[]`. Round-robin within the week so the brand does not post the same theme back-to-back on the same platform.
-- Pull `product_id` from `products[]`. If multiple products, distribute proportionally; if none (`products: []`), set `product_id: null`.
+- Set `product_id: null`. The downstream `weekly-plan-draft` step picks the product per slot by matching `slot.theme` to each product's `suggested_themes`.
 
 ## Don'ts
 
