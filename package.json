@@ -10,7 +10,8 @@
     "action-log": "node scripts/action-log-summarize.mjs"
   },
   "dependencies": {
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "yaml": "^2.8.4"
   },
   "engines": {
     "node": ">=18"

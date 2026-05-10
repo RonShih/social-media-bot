@@ -1,36 +1,45 @@
 brand:
   slug: noirs-boxes
-  display_name: "Black Magic Noir's Boxes"
+  display_name: "NoirsBoxes"
   primary_language: en
-  secondary_languages: [zh-TW, ja]
+  secondary_languages: [zh-TW, ja, zh-CN]
 
 company:
   description: |
-    Curated collectible boxes — themed mystery / variety SKU lineup with
-    global distribution via Amazon US, Taobao, and Rakuten JP. Audience
-    skews collectors, gift-buyers, and trend-followers.
-  website: https://www.amazon.com/dp/B0DZBZ9W55
+    Taiwan-based maker of intelligent charger / adapter / cable testing devices.
+    Tagline: "Stop damaging your devices with fake chargers — let NoirsBoxes
+    reveal the truth behind every cable." Products detect protocols (PD, QC),
+    measure voltage / current / ripple noise, verify MFi certification, and
+    identify counterfeit accessories. Sold globally via Amazon US, Taobao, and
+    Rakuten JP; primary B2B customers are repair shops, e-commerce sellers
+    (Amazon / eBay / Shopee), QC departments, and charger manufacturers.
+  website: https://www.noirsboxes.com
   email: ""
 
 voice:
-  tone: "playful-mysterious; collector-aware; light occult flavor without edginess"
+  tone: "technical, authoritative, solution-focused; problem-aware, not hypey"
   audience:
-    - collectors
-    - gift-buyers
-    - trend-followers (US / JP / CN)
+    - mobile repair technicians
+    - cross-border e-commerce sellers (Amazon / eBay / Shopee)
+    - QC / sourcing teams at electronics distributors
+    - charger / cable manufacturers
+    - picky iPhone power-users who want to verify their accessories
   emphasis:
-    - surprise factor
-    - curation quality
-    - global shipping reach
+    - real-world counterfeit / dead-cable detection
+    - protocol identification (PD, QC, BC1.2)
+    - measurable evidence (voltage / current / ripple curves on screen)
+    - MFi certification + E-Marker chip verification (cables)
+    - dispute reduction for sellers; OTA protocol updates
   forbidden_words:
     - guaranteed
     - cheapest
     - scam
     - fake
   forbidden_behavior:
-    - competitor name-drops
-    - unverified rarity claims
+    - competitor name-drops (specific brands like Anker, Belkin)
+    - unverified claims about specific charger brands being counterfeit
     - aggressive scarcity / urgency tactics
+    - mystery / occult / collectible framing
 
 socials:
   facebook:
@@ -55,38 +64,98 @@ socials:
     handle: noirs.boxes
 
 storefronts:
-  amazon: https://www.amazon.com/dp/B0DZBZ9W55?utm_medium=post&utm_campaign=md903&utm_term=adapter+tester&utm_content=black+magic
+  amazon_md903: https://www.amazon.com/dp/B0DZBZ9W55
+  amazon_md905: https://www.amazon.com/Noirsboxes-Charging-Certification-Portable-Lightning/dp/B0DZBSFV71
+  official: https://www.noirsboxes.com
   taobao: https://shop401155113.world.taobao.com/
   rakuten: https://item.rakuten.co.jp/twdirect/c/0000002065/
 
 products:
-  - id: noir-mystery-box
-    name: "Noir's Mystery Box"
-    category: collectible
+  - id: md-903
+    sku: MD-903
+    name: "MD-903 Charger / Adapter Tester"
+    color: red
+    category: charger-adapter-tester
+    url: https://www.amazon.com/dp/B0DZBZ9W55
     selling_points:
-      - curated rarities
-      - global shipping
-      - themed drops
-    target_audience:
-      - collectors
-      - gift-buyers
+      - detects PD / QC fast-charge protocols
+      - real-time voltage / current / power readout on 3" TFT
+      - ripple noise + rise/fall time analysis
+      - 1020 mAh battery; 115g portable
+      - OTA firmware updates as new protocols emerge
+    target_audience: [repair shops, e-commerce sellers, picky iPhone users]
+    suggested_themes: [counterfeit charger demo, PD vs QC explainer, before/after dispute story, lab readout close-up]
+
+  - id: md-905
+    sku: MD-905
+    name: "MD-905 Charging Cable Tester"
+    color: black
+    category: cable-tester
+    url: https://www.amazon.com/Noirsboxes-Charging-Certification-Portable-Lightning/dp/B0DZBSFV71
+    selling_points:
+      - detects MFi (Made for iPhone) certification
+      - reads E-Marker chip on data cables
+      - measures voltage / power output through the cable
+      - portable digital display, Lightning compatible
+    target_audience: [repair shops, mobile accessories sellers, QC teams]
+    suggested_themes: [MFi check demo, E-Marker reveal, dead-cable autopsy, fake-vs-real side-by-side]
 
 content_themes:
-  - unboxing reveal
-  - behind-the-curation
-  - collector spotlight
-  - regional drop announcement
-  - trend / lore commentary
+  - real-world counterfeit detection demo
+  - protocol explainer (PD / QC / BC1.2)
+  - lab readout close-up (TFT display showing live measurement)
+  - dispute reduction story for sellers
+  - MFi / E-Marker reveal
+  - dead-cable autopsy
+  - OTA firmware update reveal
 
 content_style:
-  facebook:  { caption_length: medium, hashtag_count: 3, link_policy: og_card,  notes: "" }
-  instagram: { caption_length: medium, hashtag_count: 8, link_policy: bio_only, notes: "blank line then hashtag block" }
-  x:         { caption_length: short,  hashtag_count: 2, link_policy: inline,   notes: "<=280 chars total incl. tags" }
-  threads:   { caption_length: medium, hashtag_count: 1, link_policy: inline,   notes: "" }
-  youtube:   { caption_length: long,   hashtag_count: 8, link_policy: inline,   notes: "SEO-leaning description" }
-  tiktok:    { caption_length: short,  hashtag_count: 5, link_policy: bio_only, notes: "trend-aware tags" }
+  facebook:  { caption_length: medium, hashtag_count: 3, link_policy: og_card,  notes: "lead with 'have you ever bought a fake charger' style hook" }
+  instagram: { caption_length: medium, hashtag_count: 8, link_policy: bio_only, notes: "first frame = TFT screen close-up; carousel for before/after readings" }
+  x:         { caption_length: short,  hashtag_count: 2, link_policy: inline,   notes: "<=280 chars; lead with the surprising reading" }
+  threads:   { caption_length: medium, hashtag_count: 1, link_policy: inline,   notes: "conversational repair-shop voice" }
+  youtube:   { caption_length: long,   hashtag_count: 8, link_policy: inline,   notes: "SEO terms: PD tester, MFi checker, fake charger detector" }
+  tiktok:    { caption_length: short,  hashtag_count: 5, link_policy: bio_only, notes: "trending repair / tech-debunk format" }
 
-competitors: []
+competitor_products:
+  - name: "ChargerLAB POWER-Z"
+    similar_to: md-903
+    category: usb-pd-tester
+    region: cn / global
+    socials:
+      facebook:  https://www.facebook.com/chargerlab/
+      instagram: https://www.instagram.com/chargerlabs/
+      x:         https://x.com/chargerlab
+      youtube:   https://www.youtube.com/channel/UCbHlweun5NkTVDGmeqGmwjA
+      tiktok:    https://www.tiktok.com/@chargerlab
+      threads:   ""
+    notes: "shared social handles with CT001 entry; scrape de-duplicates"
+
+  - name: "ChargerLAB POWER-Z CT001"
+    similar_to: md-905
+    category: cable-tester
+    region: cn / global
+    socials:
+      facebook:  https://www.facebook.com/chargerlab/
+      instagram: https://www.instagram.com/chargerlabs/
+      x:         https://x.com/chargerlab
+      youtube:   https://www.youtube.com/channel/UCbHlweun5NkTVDGmeqGmwjA
+      tiktok:    https://www.tiktok.com/@chargerlab
+      threads:   ""
+    notes: "same brand as POWER-Z; cable-side product line"
+
+  - name: "Total Phase Advanced Cable Tester v2"
+    similar_to: md-905
+    category: cable-tester
+    region: us
+    socials:
+      facebook:  https://www.facebook.com/totalphase/
+      instagram: ""
+      x:         https://x.com/totalphase
+      youtube:   ""
+      tiktok:    ""
+      threads:   ""
+    notes: "B2B-leaning; low social activity outside FB/X"
 
 reference_urls:
   own:
@@ -101,9 +170,11 @@ media_library:
   assets_dir: media/assets/noirs-boxes
   inbox_dir: media/assets/noirs-boxes/inbox
   hints:
-    - "dark / moody backgrounds; gold and burgundy accents"
-    - "show the box closed before reveal"
-    - "occult-adjacent props OK; avoid horror or violent imagery"
+    - "clean product shot on neutral / dark surface; brand colors = black + red"
+    - "TFT display close-up showing real readings (voltage / current numbers)"
+    - "lab desk environment; oscilloscope / cable / charger as props"
+    - "before-after side-by-side for fake-vs-real demos"
+    - "avoid mystery / occult / collectible framing"
 
 storage:
   drafts_dir: reports/drafts/noirs-boxes
