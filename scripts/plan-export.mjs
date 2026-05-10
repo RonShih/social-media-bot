@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// plan.json -> plan.xlsx (6 sheets: TopicResearch, OwnHistory, Frequency, Schedule, Metrics, Meta).
+// plan.json -> plan.xlsx (5 sheets: TopicResearch, Frequency, Schedule, Metrics, Meta).
 // Usage: node scripts/plan-export.mjs <plan.json>
 
 import { readFileSync, existsSync } from "node:fs";
@@ -71,26 +71,6 @@ addSheet(
     { header: "takeaway_for_us", key: "takeaway_for_us", width: 50 }
   ],
   plan.topic_research || []
-);
-
-addSheet(
-  "OwnHistory",
-  [
-    { header: "platform", key: "platform", width: 12 },
-    { header: "post_url", key: "post_url", width: 50 },
-    { header: "posted_at", key: "posted_at", width: 22 },
-    { header: "likes", key: "likes", width: 8 },
-    { header: "comments", key: "comments", width: 10 },
-    { header: "shares", key: "shares", width: 8 },
-    { header: "views", key: "views", width: 10 },
-    { header: "caption_excerpt", key: "caption_excerpt", width: 50 },
-    { header: "tone", key: "tone", width: 22 },
-    { header: "layout", key: "layout", width: 30 },
-    { header: "hook", key: "hook", width: 40 },
-    { header: "why_it_resonated", key: "why_it_resonated", width: 50 },
-    { header: "repeatable_pattern", key: "repeatable_pattern", width: 50 }
-  ],
-  plan.own_history || []
 );
 
 addSheet(
