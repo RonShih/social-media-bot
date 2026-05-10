@@ -1,0 +1,26 @@
+{
+  "schedule": [
+    {"slot_id":"2026-W19-ig-mon-1230","weekday":"Mon","time_local":"12:30","platform":"instagram","mode":"post","theme":"MFi check demo","product_id":"md-905","caption":"Did you know your Lightning cable might be lying about MFi certification? Here's how to check in 5 seconds. (TFT readout in pic 2)","hashtags":["#mfi","#lightningcable","#iphonecharger","#mfichecker","#noirsboxes","#tech","#repair","#authentic"],"media_path":"media/assets/noirs-boxes/md-905/mfi-readout.jpg","reference_urls":[],"status":"planned","posted_url":"","posted_at":"","draft_id":"weekly-2026-W19-ig-mon-1230"},
+    {"slot_id":"2026-W19-fb-tue-1100","weekday":"Tue","time_local":"11:00","platform":"facebook","mode":"post","theme":"PD vs QC explainer","product_id":"md-903","caption":"PD or QC — which protocol is your charger actually delivering? Most fast chargers don't tell you. Our MD-903 does. Real readings, no guessing.","hashtags":["#pdcharging","#qcprotocol","#chargertester"],"media_path":"media/assets/noirs-boxes/md-903/pd-readout.jpg","reference_urls":[],"status":"planned","posted_url":"","posted_at":"","draft_id":"weekly-2026-W19-fb-tue-1100"}
+  ],
+  "frequency": [
+    {"platform":"instagram","posts_per_week":4,"preferred_weekdays":["Mon","Wed","Fri","Sun"],"preferred_times":["12:30","20:00"],"rationale":"smoke synthesis"},
+    {"platform":"facebook","posts_per_week":3,"preferred_weekdays":["Tue","Thu","Sat"],"preferred_times":["11:00","19:00"],"rationale":"smoke synthesis"}
+  ],
+  "topic_research": [
+    {"platform":"instagram","competitor_product":"ChargerLAB POWER-Z","similar_to":"md-903","relevant_to":"md-903","post_url":"https://www.instagram.com/p/X/","posted_at":"2026-04-01","likes":2400,"comments":85,"shares":0,"views":18000,"hook":"Apple's new 35W charger — is it actually fast?","tone":"technical-demo","layout":"video + lab reading overlay","why_it_resonated":"specific brand teardown + on-screen numbers builds credibility","takeaway_for_us":"name the brand under test → drives engagement"}
+  ],
+  "own_history": [
+    {"platform":"instagram","post_url":"https://www.instagram.com/p/Y/","posted_at":"2026-04-15","likes":120,"comments":8,"shares":2,"views":1800,"caption_excerpt":"PD vs QC — same wattage, different protocol. Here's why it matters.","tone":"technical-explainer","layout":"reel + 2-line caption","hook":"Same wattage, different protocol","why_it_resonated":"educational hook on a confusion point repair shops face","repeatable_pattern":"lead with a 'same X different Y' contrast"}
+  ],
+  "metrics": [],
+  "meta": {
+    "brand":"noirs-boxes",
+    "iso_week":"2026-W19",
+    "generated_at":"2026-05-10T00:00:00Z",
+    "prev_week_plan_path":null,
+    "own_top_scraped_at":"2026-05-10T00:00:00Z",
+    "model":"claude-opus-4-7",
+    "notes":"smoke synthesis — used to verify 6-sheet export end-to-end. Real data comes from /weekly-plan run after /first-time-login."
+  }
+}
