@@ -86,3 +86,8 @@ Orchestrator (the slash-command code path) wraps every `mcp__playwright__browser
 - Don't take screenshots to disk except on error (action log path).
 - Don't try to auto-login. If a session expires → return an error pointing the user at `/first-time-login`.
 - Don't `pkill chrome` or delete `SingletonLock`. Use `/unlock-browser`.
+
+## Playwright split (see OPERATING_RULES §11)
+
+- Writes → MCP. Reads (bulk own-account scraping) → `scripts/scrape-*.mjs`. Profile dir is shared, never concurrent.
+- Scrape script writes `data/scrape-logs/<run-id>-<platform>.jsonl`. Action log stays MCP-only.

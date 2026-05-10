@@ -140,6 +140,14 @@ Every `mcp__playwright__browser_*` call during `/publish-now`, `/publish-from-pl
 
 Schema: see `docs/ACTION_LOG.md`.
 
+## 11. Playwright tool split
+
+- **Writes** (publish, delete, login) → Playwright **MCP**. Action log wraps every `mcp__playwright__browser_*` call.
+- **Bulk read scraping** (own-account top posts) → Node script under `scripts/scrape-*.mjs`. Independent log under `data/scrape-logs/<run-id>-<platform>.jsonl`.
+- **Competitor read** → `fetch-reference` (WebFetch) — best-effort, no logged-in session. Treats login walls as expected and returns sparse data.
+- MCP and the Node script **must not share** `browser_profiles/<brand>/` concurrently. Orchestrator serializes: MCP step ends with `browser_close` before any script step begins.
+- Profile lock conflict → `{ "error": "profile lock conflict, run /unlock-browser..." }` per §9.
+
 ---
 
 ## Maintenance
