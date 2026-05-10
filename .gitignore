@@ -11,3 +11,11 @@ package-lock.json
 *.log
 .DS_Store
 /tmp/
+
+# bellie — brand runtime data (configs in config/brands/bellie.yaml stay tracked)
+reports/plans/bellie/
+reports/drafts/bellie/
+reports/posts/bellie/
+media/assets/bellie/
+data/scrape-logs/*bellie*
+data/stats-history/bellie*
