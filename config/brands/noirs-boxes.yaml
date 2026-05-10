@@ -34,7 +34,6 @@ voice:
     - guaranteed
     - cheapest
     - scam
-    - fake
   forbidden_behavior:
     - competitor name-drops (specific brands like Anker, Belkin)
     - unverified claims about specific charger brands being counterfeit
