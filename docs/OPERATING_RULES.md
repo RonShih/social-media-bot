@@ -136,7 +136,7 @@ Most important discipline in this project. Violation → chatty UX (reporting ev
 
 ## 10. Action log
 
-Every `mcp__playwright__browser_*` call during `/publish-now`, `/publish-from-plan`, `/test-roundtrip`, and the metrics-scrape step of `/weekly-plan` is wrapped by the orchestrator and appended to `data/action-logs/<run-id>.jsonl`. Skills do not write to the action log themselves.
+Every `mcp__playwright__browser_*` call during `/publish-now`, `/publish-from-plan`, `/test-roundtrip`, and the metrics-scrape and competitor-scrape steps of `/weekly-plan` is wrapped by the orchestrator and appended to `data/action-logs/<run-id>.jsonl`. Skills do not write to the action log themselves.
 
 Schema: see `docs/ACTION_LOG.md`.
 
@@ -144,7 +144,13 @@ Schema: see `docs/ACTION_LOG.md`.
 
 - **Writes** (publish, delete, login) → Playwright **MCP**. Action log wraps every `mcp__playwright__browser_*` call.
 - **Bulk read scraping** (own-account top posts) → Node script under `scripts/scrape-*.mjs`. Independent log under `data/scrape-logs/<run-id>-<platform>.jsonl`.
-- **Competitor read** → `fetch-reference` (WebFetch) — best-effort, no logged-in session. Treats login walls as expected and returns sparse data.
+- **Competitor read — public pages** → `fetch-reference` (WebFetch / WebSearch) inside a subagent. Default path for FB pages, X public profiles, YouTube channels.
+- **Competitor read — login-walled platforms (IG / TikTok / Threads)** → main-session Playwright **MCP**, read-only. Constraints:
+  - ≤ 3 posts per competitor URL per run (small footprint, recency-first).
+  - Read-only: navigation + `og:description` extraction only. NEVER `like` / `comment` / `share` / open stories / follow.
+  - Sequential in main session (subagents cannot reach MCP browser session).
+  - `browser_close` on completion (per §9). Action-logged (per §10).
+  - Why MCP works here: `og:description` meta tag is server-rendered for OG-protocol crawlers; surfaces likes / comments / posted_at / full caption without depending on cookies.
 - MCP and the Node script **must not share** `browser_profiles/<brand>/` concurrently. Orchestrator serializes: MCP step ends with `browser_close` before any script step begins.
 - Profile lock conflict → `{ "error": "profile lock conflict, run /unlock-browser..." }` per §9.
 
