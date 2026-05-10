@@ -9,7 +9,6 @@ description: Generate caption + hashtags + media plan + product_id for one sched
 - `slot`: one row from `weekly-plan-schedule.schedule[]` (slot_id, weekday, time_local, platform, mode, theme; `product_id` arrives as `null` and this skill fills it).
 - `available_products`: full `products[]` from active brand YAML.
 - `topic_research_rows`: subset of `topic_research_rows` filtered to this slot's platform.
-- `own_history_rows`: subset of `own_history_rows` filtered to this slot's platform.
 - `brand_yaml`: the active brand profile (full).
 - `reference`: optional — `fetch-reference` output if the slot is news/event-driven.
 
@@ -43,7 +42,7 @@ description: Generate caption + hashtags + media plan + product_id for one sched
 
 3. **Filter research for SKU**:
    - From `topic_research_rows`, keep rows where `relevant_to == product_id` or `relevant_to == "both"`.
-   - Use these + `own_history_rows` to abstract patterns (tone, opening hook style, layout) — do not lift sentences.
+   - Use these to abstract patterns (tone, opening hook style, layout) — do not lift sentences.
 
 4. **Pick `media_path`**:
    - Look in `media/assets/<brand>/<product_id>/` for an image / video matching `mode`.
@@ -57,5 +56,5 @@ description: Generate caption + hashtags + media plan + product_id for one sched
 - Do not call `publish-*` or `image-generator` directly — the orchestrator does that on the back of `media_path: null`.
 - Do not write files — return JSON only.
 - Do not duplicate captions across slots — vary hooks even when the theme is identical.
-- Do not invent engagement metrics or research data. Use what `topic_research_rows` / `own_history_rows` provide; if a slot's platform has no research data, draft conservatively from brand YAML alone and say so in `rationale`.
+- Do not invent engagement metrics or research data. Use what `topic_research_rows` provides; if a slot's platform has no research data, draft conservatively from brand YAML alone and say so in `rationale`.
 - Do not pick a `product_id` not present in `available_products`.

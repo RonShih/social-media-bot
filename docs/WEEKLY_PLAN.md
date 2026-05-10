@@ -9,8 +9,12 @@ reports/plans/<brand>/2026-W19/
 ├── plan.json           # source of truth (machine-readable)
 ├── plan.xlsx           # human-readable, regenerated from plan.json
 └── research/
-    ├── own-{facebook,instagram,x,threads,youtube,tiktok}-top.json   # raw script output
-    ├── {facebook,instagram,x,threads,youtube,tiktok}.json           # LLM-analyzed (own + topic)
+    ├── facebook.json
+    ├── instagram.json
+    ├── x.json
+    ├── threads.json
+    ├── youtube.json
+    └── tiktok.json
 ```
 
 `plan.json` is canonical. `plan.xlsx` is a view; treat it as read-only from the user's side. Edits to the plan happen by editing `plan.json` and re-running `weekly-plan-export`.
@@ -24,24 +28,21 @@ reports/plans/<brand>/2026-W19/
    - Writes fresh rows to last week's `Metrics` sheet.
    - Updates `data/stats-history/<brand>.json`.
 
-2. **Own-top scrape** (main session, sequential):
-   - `scripts/scrape-top-posts.mjs` runs once per platform against the brand's logged-in profile. Writes `research/own-<platform>-top.json`.
-
-3. **Research per platform** (parallel):
+2. **Research per platform** (parallel):
    - One `weekly-plan-research` subagent per platform.
-   - Subagent reads the own-top JSON for analysis; gathers competitor URLs via `fetch-reference`.
+   - Subagent gathers competitor URLs via `fetch-reference` and analyses.
    - Per-platform output saved as `research/<platform>.json`.
 
-4. **Schedule** (main session, pure compute):
+3. **Schedule** (main session, pure compute):
    - `weekly-plan-schedule` produces `frequency[]` and `schedule[]` for the week.
    - Last-week `Metrics` (if available) nudge frequency / time bands.
 
-5. **Drafts** (parallel):
+4. **Drafts** (parallel):
    - One `weekly-plan-draft` subagent per slot.
    - Each subagent receives `research_rows` filtered to its platform + the brand YAML.
    - Returns caption / hashtags / media_path / reference_urls / rationale.
 
-6. **Compose** `plan.json` and call `weekly-plan-export` for `plan.xlsx`.
+5. **Compose** `plan.json` and call `weekly-plan-export` for `plan.xlsx`.
 
 ## Sheet reference
 
@@ -72,12 +73,6 @@ platform, posts_per_week, preferred_weekdays, preferred_times, rationale
 Rival-product top-post analysis. One row per (competitor_product × post). Columns: `platform, competitor_product, similar_to, relevant_to, post_url, posted_at, likes, comments, shares, views, hook, tone, layout, why_it_resonated, takeaway_for_us`.
 
 `similar_to` = the brand-level hint from YAML (which of our SKUs the rival generally competes with). `relevant_to` = LLM's per-post determination (could be different from `similar_to` because a single competitor account posts about multiple products).
-
-### OwnHistory
-
-NoirsBoxes own-account top posts, scraped weekly via `scripts/scrape-top-posts.mjs`. Columns: `platform, post_url, posted_at, likes, comments, shares, views, caption_excerpt, tone, layout, hook, why_it_resonated, repeatable_pattern`.
-
-Top 10 per platform from the most recent ~60 posts, ranked by engagement.
 
 ### Metrics
 

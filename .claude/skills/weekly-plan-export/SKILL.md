@@ -28,11 +28,10 @@ description: Convert plan.json into plan.xlsx via scripts/plan-export.mjs (excel
 ## Sheet structure (handled by the script)
 
 - `TopicResearch`: rival-product top posts with tone/hook/why analysis.
-- `OwnHistory`: own-account top posts with tone/hook/why analysis + repeatable pattern.
 - `Frequency`: per-platform cadence + rationale.
 - `Schedule`: per-slot rows with caption / hashtags / product_id.
 - `Metrics`: empty until `weekly-plan-review` populates it next week.
-- `Meta`: brand, iso_week, generated_at, prev_week_plan_path, own_top_scraped_at, model, notes.
+- `Meta`: brand, iso_week, generated_at, prev_week_plan_path, model, notes.
 
 ## Don'ts
 
