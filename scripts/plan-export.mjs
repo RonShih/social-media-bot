@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// plan.json -> plan.xlsx (5 sheets: Schedule, Frequency, Research, Metrics, Meta).
+// plan.json -> plan.xlsx (6 sheets: TopicResearch, OwnHistory, Frequency, Schedule, Metrics, Meta).
 // Usage: node scripts/plan-export.mjs <plan.json>
 
 import { readFileSync, existsSync } from "node:fs";
@@ -52,6 +52,64 @@ function addSheet(name, columns, rows) {
 }
 
 addSheet(
+  "TopicResearch",
+  [
+    { header: "platform", key: "platform", width: 12 },
+    { header: "competitor_product", key: "competitor_product", width: 28 },
+    { header: "similar_to", key: "similar_to", width: 12 },
+    { header: "relevant_to", key: "relevant_to", width: 12 },
+    { header: "post_url", key: "post_url", width: 50 },
+    { header: "posted_at", key: "posted_at", width: 22 },
+    { header: "likes", key: "likes", width: 8 },
+    { header: "comments", key: "comments", width: 10 },
+    { header: "shares", key: "shares", width: 8 },
+    { header: "views", key: "views", width: 10 },
+    { header: "hook", key: "hook", width: 40 },
+    { header: "tone", key: "tone", width: 22 },
+    { header: "layout", key: "layout", width: 30 },
+    { header: "why_it_resonated", key: "why_it_resonated", width: 50 },
+    { header: "takeaway_for_us", key: "takeaway_for_us", width: 50 }
+  ],
+  plan.topic_research || []
+);
+
+addSheet(
+  "OwnHistory",
+  [
+    { header: "platform", key: "platform", width: 12 },
+    { header: "post_url", key: "post_url", width: 50 },
+    { header: "posted_at", key: "posted_at", width: 22 },
+    { header: "likes", key: "likes", width: 8 },
+    { header: "comments", key: "comments", width: 10 },
+    { header: "shares", key: "shares", width: 8 },
+    { header: "views", key: "views", width: 10 },
+    { header: "caption_excerpt", key: "caption_excerpt", width: 50 },
+    { header: "tone", key: "tone", width: 22 },
+    { header: "layout", key: "layout", width: 30 },
+    { header: "hook", key: "hook", width: 40 },
+    { header: "why_it_resonated", key: "why_it_resonated", width: 50 },
+    { header: "repeatable_pattern", key: "repeatable_pattern", width: 50 }
+  ],
+  plan.own_history || []
+);
+
+addSheet(
+  "Frequency",
+  [
+    { header: "platform", key: "platform", width: 12 },
+    { header: "posts_per_week", key: "posts_per_week", width: 14 },
+    { header: "preferred_weekdays", key: "preferred_weekdays", width: 28 },
+    { header: "preferred_times", key: "preferred_times", width: 22 },
+    { header: "rationale", key: "rationale", width: 60 }
+  ],
+  (plan.frequency || []).map((r) => ({
+    ...r,
+    preferred_weekdays: Array.isArray(r.preferred_weekdays) ? r.preferred_weekdays.join(", ") : r.preferred_weekdays,
+    preferred_times: Array.isArray(r.preferred_times) ? r.preferred_times.join(", ") : r.preferred_times
+  }))
+);
+
+addSheet(
   "Schedule",
   [
     { header: "slot_id", key: "slot_id", width: 28 },
@@ -75,41 +133,6 @@ addSheet(
     hashtags: Array.isArray(s.hashtags) ? s.hashtags.join(" ") : s.hashtags || "",
     reference_urls: Array.isArray(s.reference_urls) ? s.reference_urls.join("\n") : s.reference_urls || ""
   }))
-);
-
-addSheet(
-  "Frequency",
-  [
-    { header: "platform", key: "platform", width: 12 },
-    { header: "posts_per_week", key: "posts_per_week", width: 14 },
-    { header: "preferred_weekdays", key: "preferred_weekdays", width: 28 },
-    { header: "preferred_times", key: "preferred_times", width: 22 },
-    { header: "rationale", key: "rationale", width: 60 }
-  ],
-  (plan.frequency || []).map((r) => ({
-    ...r,
-    preferred_weekdays: Array.isArray(r.preferred_weekdays) ? r.preferred_weekdays.join(", ") : r.preferred_weekdays,
-    preferred_times: Array.isArray(r.preferred_times) ? r.preferred_times.join(", ") : r.preferred_times
-  }))
-);
-
-addSheet(
-  "Research",
-  [
-    { header: "platform", key: "platform", width: 12 },
-    { header: "source", key: "source", width: 12 },
-    { header: "account", key: "account", width: 22 },
-    { header: "post_url", key: "post_url", width: 50 },
-    { header: "post_type", key: "post_type", width: 10 },
-    { header: "likes", key: "likes", width: 8 },
-    { header: "comments", key: "comments", width: 10 },
-    { header: "shares", key: "shares", width: 8 },
-    { header: "tone", key: "tone", width: 22 },
-    { header: "layout", key: "layout", width: 30 },
-    { header: "hook", key: "hook", width: 40 },
-    { header: "why_it_resonated", key: "why_it_resonated", width: 50 }
-  ],
-  plan.research || []
 );
 
 addSheet(
