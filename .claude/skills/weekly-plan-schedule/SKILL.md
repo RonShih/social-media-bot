@@ -34,7 +34,7 @@ description: Compute per-platform posting frequency and best-time slots for the 
       "platform": "instagram",
       "mode": "post",
       "theme": "<from content_themes>",
-      "product_id": "noir-mystery-box"
+      "product_id": null
     }
   ]
 }
