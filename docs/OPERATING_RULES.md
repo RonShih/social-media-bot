@@ -91,7 +91,8 @@ Most important discipline in this project. Violation → chatty UX (reporting ev
   - Unrelated to publishing (ad upsell, onboarding nag, cookie consent, password-leak warning) → close / Escape / "Not now" / "No thanks".
   - Affects publishing (paywall, account-verify, 2FA, "add WhatsApp button") → stop and return a structured end-state error.
 - Accessible-name / element-position drift → snapshot, find by role / nearby label, fall back to keyboard.
-- Transient error / slow load → wait + retry, ~3 attempts per step.
+- Transient error / slow load **inside a single MCP tool call** (re-click a slow button, wait for nav) → wait + retry, ~3 attempts per call site. This is cheap — no LLM tokens spent.
+- **LLM-level retry is NOT a transient-error response.** A `tool_result` returning `is_error: true`, a subagent returning `{"error": ...}`, or an MCP server reporting failure is an **end-state truth** (next section), not noise. Surface it; do not respawn the subagent, do not "try a different approach", do not silently substitute another platform. Every such retry burns tokens.
 
 ### End-state truth (anything that changes the user's world) → return structured, never fabricate
 
@@ -101,12 +102,30 @@ Most important discipline in this project. Violation → chatty UX (reporting ev
 - Profile lock conflict: `{"error": "profile lock conflict, run /unlock-browser..."}`
 - Asset missing: `{"error": "asset not found: <path>"}`
 
+### Ambiguity / 疑問 → ask, do not guess
+
+Default disposition when something is unclear is **stop and ask**, not "pick the safest guess" or "run all reasonable options". This is the LLM-cost analogue of the `is_error` rule above: token cost of one clarifying message is far below the cost of running the wrong flow end-to-end (a wrong `/weekly-plan` is ~30 min of subagent burn).
+
+Stop and surface a question (channel-appropriate: TG `reply`, LINE `line_send`, CLI main text) when:
+
+- The user's instruction does not name the platform(s) / asset / target post / week.
+- A required field is missing from brand YAML or plan.json (do not silently infer a default).
+- Two valid interpretations of the command exist and the L1 buffer / L2 memory does not disambiguate.
+- A subagent returned sparse data and proceeding would require fabricating values to fit the schema.
+- You are about to make up any value to satisfy a schema.
+
+The signal to ask: "I am about to (a) make up a value, (b) pick one of N options without a stated reason, or (c) start a non-trivial operation based on inference." Stop, surface, wait.
+
+This does **not** override §6 — being asked to "post to all platforms" is not ambiguous and §6 still forbids skipping platforms because you predict failure. §5-ambiguity is about *what the user wants*; §6 is about *whether to attempt assigned work*.
+
 ### Hard rules — never crossable, even under "do whatever it takes"
 
 - Never fabricate a `post_url`.
 - Never click buttons of unclear meaning to push past a dialog (FB "add WhatsApp button", paid features, follow-requests, subscriptions).
 - Never `pkill chrome`, `kill -9`, or delete `SingletonLock` to break a profile lock.
 - Never auto-fill a password.
+- Never silently respawn a subagent that returned an error — surface and stop.
+- Never make up a value to fill a schema — ask the user instead.
 
 ## 6. Do not predict platform behavior
 

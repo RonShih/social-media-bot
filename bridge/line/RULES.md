@@ -104,11 +104,68 @@ The prompt header tells you `target_id` (group_id / user_id) and `sender` (in gr
   - ❌ Don't write: details specific to this task (ephemeral), facts visible in code, history visible in git
 - L3 content history (SQLite index of past posts) is **not yet implemented** (Phase 2) — to look up past posts use `Glob`/`Read` on `reports/posts/*.md`.
 
-## 9. Error handling — consistent with OPERATING_RULES §4
+## 9. Error handling — fail fast, ask when unsure, never experiment
 
-Swallow intermediate noise silently, report final outcome honestly. The only difference is "replying to user" means one `line_send` message instead of TG's `reply`.
+The TG channel can use `react` + `edit_message` to silently recover. **LINE cannot.** Combined with the per-message stateless spawn and finite push quota, the only correct behavior on **any** error or ambiguity is: **report once via `line_send` and stop.**
 
-Hard rules remain: don't fabricate post_url, don't click buttons with unclear purpose, don't grab profile lock, don't auto-fill passwords.
+The default disposition is **stop and surface**, not "try to fix it" or "pick the most likely interpretation". Token cost of asking ≪ token cost of running the wrong task.
+
+### Cheap retries — still allowed (OPERATING_RULES §5)
+
+- A single MCP tool call retrying internally on a transient browser issue (slow page, network blip) — up to ~3 attempts per call site. Zero LLM tokens.
+
+### Expensive retries — forbidden (each one is another LLM turn or subagent spawn)
+
+- `tool_result` with `is_error: true` → **do not "try a different approach".** Surface the error verbatim.
+- Subagent that returns error / partial / `{"error": ...}` → **do not respawn for the same task.** Surface and stop.
+- MCP server error / disconnect / timeout → **do not loop.** Surface and stop.
+- Login expired / cookie dead / 2FA prompt / paywall → **do not attempt to recover.** Tell the user to run `/first-time-login` (per §8) and stop.
+- A platform-specific step failed inside a multi-platform command → **do not silently substitute** ("FB failed, let me do IG instead" is forbidden). Report partial result + the failed step.
+- `/weekly-plan` research/draft subagent failed for one platform → return what succeeded + the failed platform's error. **Do not retry that platform.**
+
+### Uncertainty / 疑問 — ask, don't guess
+
+If at any point you are **not ≥ 90% sure** which interpretation the user meant, what value to pick, or whether a step should run — **stop and ask via `line_send`.** Do not pick the "safest guess", do not run both options, do not silently fall back to a default.
+
+Cases that always warrant asking (not guessing):
+
+- User said "post this" but didn't specify which platforms → ask which of FB / IG / X / Threads / TikTok / YouTube.
+- Asset / image / video unspecified → ask which file under `media/assets/<brand>/` (or "should I generate one?").
+- Reference to past content is vague ("same as last week", "the one we did about X") → ask for the specific post URL or draft_id.
+- Date / week ambiguous ("這週" near midnight, ISO-week boundary) → confirm `YYYY-Www`.
+- Two valid command interpretations (e.g. `/draft-post` could mean draft-only OR draft+stage for tomorrow) → ask.
+- Required field missing from `config/brands/<active>.yaml` or `plan.json` → ask the user to fill it; do not infer a default.
+- Subagent returns sparse data and you'd have to fabricate to fill the schema → ask whether to proceed with partial data or abort.
+
+The signal you should be asking: you are about to either (a) make up a value, (b) pick one of N options without a stated reason, or (c) start a non-trivial operation based on inference. Stop and ask first.
+
+### Report format
+
+**Error** — one `line_send`, plain text:
+
+```
+❌ <command or step name>
+step: <which subroutine>
+error: <verbatim, max 400 chars>
+run: <LINE_RUN_ID from your prompt header>
+```
+
+**Question** — one `line_send`, plain text:
+
+```
+❓ <what's unclear in one sentence>
+options:
+- A) <option>
+- B) <option>
+- C) <option>
+run: <LINE_RUN_ID>
+```
+
+Then stop calling tools. The user's next message starts a fresh spawn with full context (L1 buffer carries your question).
+
+### Hard rules unchanged
+
+Don't fabricate post_url, don't click buttons with unclear purpose, don't grab profile lock, don't auto-fill passwords.
 
 ## 10. Main session stdout is a dev log, not a response
 
