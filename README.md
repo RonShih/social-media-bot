@@ -86,6 +86,58 @@ That template makes Claude:
 - Run `/draft-post` and `/weekly-plan` as preview-only.
 - Wait for "ok" / "go" / "yes" / explicit slash command before `/publish-now`.
 
+#### Running multiple Telegram bots on one machine
+
+The plugin defaults to a single state dir at `~/.claude/channels/telegram/` (one token, one allowlist). To run two bots side by side — e.g. this project plus a separate `meeting_agent` — point each session at its own state dir via `TELEGRAM_STATE_DIR` ([`server.ts:26`](https://github.com/anthropics/claude-plugins/blob/main/external_plugins/telegram/server.ts)).
+
+1. Create one state dir per bot:
+
+   ```bash
+   mkdir -p ~/.claude/channels/telegram-social
+   mkdir -p ~/.claude/channels/telegram-meeting
+   ```
+
+2. Write `.env` in each (the `/telegram:configure` skill hard-codes the default path, so write these by hand):
+
+   ```bash
+   # ~/.claude/channels/telegram-social/.env
+   TELEGRAM_BOT_TOKEN=<social bot token>
+
+   # ~/.claude/channels/telegram-meeting/.env
+   TELEGRAM_BOT_TOKEN=<meeting bot token>
+   ```
+
+   ```bash
+   chmod 600 ~/.claude/channels/telegram-*/.env
+   ```
+
+3. Write `access.json` per bot (the `/telegram:access` skill also hard-codes the default path). Minimum viable file:
+
+   ```json
+   {
+     "dmPolicy": "allowlist",
+     "allowed": [{ "id": <your-telegram-numeric-id>, "name": "you" }]
+   }
+   ```
+
+   Get your numeric ID by DMing [@userinfobot](https://t.me/userinfobot) on Telegram.
+
+4. Launch each project with `TELEGRAM_STATE_DIR` set:
+
+   ```bash
+   # Terminal 1 — social-media-bot
+   TELEGRAM_STATE_DIR=~/.claude/channels/telegram-social \
+     claude --channels plugin:telegram@claude-plugins-official
+
+   # Terminal 2 — meeting_agent
+   TELEGRAM_STATE_DIR=~/.claude/channels/telegram-meeting \
+     claude --channels plugin:telegram@claude-plugins-official
+   ```
+
+   Use `tmux` (`tmux new -s social` / `tmux new -s meeting`) if you want them to survive terminal close.
+
+Tokens, allowlists, and pairing codes are fully isolated per state dir. The two bots have no awareness of each other.
+
 ### LINE (self-hosted webhook bridge)
 
 `bridge/line/` ships a FastAPI webhook server, a small MCP server exposing `line_send` / `line_reply` / `line_push`, and a one-shot CLI for binding the webhook URL to your LINE Messaging API channel.
