@@ -11,6 +11,8 @@ Any session (main or subagent) handling a user request must read first:
 `docs/OPERATING_RULES.md` is enforced discipline, not advice. Violating it is a bug.
 Brand-specific preferences live in the brand YAML; platform-specific UI quirks live in the matching SKILL.md. Do not mix them.
 
+> **If you arrived through the LINE bridge** (a `claude -p` session spawned by `bridge/line/webhook_server.py`), additionally read `bridge/line/RULES.md`. It overrides the TG-specific parts of OPERATING_RULES (react / reply tool / edit_message → `line_send` / reply_token / push).
+
 ## Active brand resolution
 
 In order:
@@ -35,6 +37,8 @@ If `config/brands/<active>.yaml` is missing or looks empty (no `display_name`, n
 - Pending bot confirmations: `data/pending-confirmations.json` (5-minute TTL on each entry).
 - Stats history: `data/stats-history/<brand>.json` — rolled-up post metrics for next-week feedback.
 - Assets: `media/assets/<brand>/...` and `media/assets/<brand>/inbox/` for Telegram-uploaded files.
+- LINE inbox (channel-keyed, brand-agnostic at ingest): `media/inbox/line/<group_id>/<message_id>.<ext>` — webhook server downloads attachments here; brand is resolved per-message via `BRAND` env / `config/active-brand` / L2 hint.
+- LINE conversation memory: `data/line/conversations/<group_id>.jsonl` (L1 rolling buffer) and `data/line/memory/<group_id>.md` (L2 structured preferences, Claude maintains via Edit).
 - Browser profile: `browser_profiles/<brand>/` — Playwright `--user-data-dir` is per-brand.
 
 ## Operating rules — work principles
@@ -45,9 +49,18 @@ If `config/brands/<active>.yaml` is missing or looks empty (no `display_name`, n
 4. All platform interactions go through Playwright MCP. No platform APIs, no fallbacks to APIs.
 5. All data is local. No Google Drive / Sheets / Docs / Apps Script.
 
+## Channel modes
+
+This repo can be driven from two channels. They are independent — pick one or run both side by side.
+
+- **Telegram channel** — Claude Code's official channels plugin (`claude --channels plugin:telegram@claude-plugins-official`). Long-lived session: every TG message lands in the same Claude session, context accumulates.
+- **LINE channel** — `bridge/line/webhook_server.py` (FastAPI) receives LINE webhooks and spawns a fresh `claude -p` session per inbound message. Stateless per-message; conversation continuity comes from the L1 + L2 memory files injected at the top of every prompt. See `bridge/line/README.md` and `bridge/line/RULES.md`.
+
+Cross-channel rules live in `docs/OPERATING_RULES.md`. TG-specific rules are sections §1–§3. LINE-specific rules (override the TG bits) live in `bridge/line/RULES.md`.
+
 ## Subagent discipline
 
-Channel sessions (e.g. `claude --channels plugin:telegram@...`) are long-lived; context accumulates. Pure LLM work goes in subagents to keep main-session context clean. But Playwright MCP cannot be reached from subagents (browser session does not propagate) — anything touching the browser must run in the main session.
+Channel sessions are long-lived (TG) or stateless (LINE). For TG, pure LLM work goes in subagents to keep main-session context clean. For LINE, the per-message session is already short-lived, so subagents are optional — only spawn one for `/draft-post` per platform parallelism. Playwright MCP cannot be reached from subagents (browser session does not propagate) — anything touching the browser must run in the main session.
 
 Rules:
 

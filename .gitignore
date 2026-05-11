@@ -1,4 +1,10 @@
 .claude/settings.json
+__pycache__/
+
+# LINE bridge — config
+bridge/line/.env
+bridge/line/mcp-config-line.json
+
 config/active-brand
 config/secrets.yaml
 browser_profiles/
